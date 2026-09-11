@@ -1,4 +1,9 @@
 {
   "attachmentFolderPath": "Assets",
-  "useMarkdownLinks": true
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Notes",
+  "newLinkFormat": "absolute",
+  "showUnsupportedFiles": true
 }

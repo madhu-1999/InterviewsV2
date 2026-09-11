@@ -6,5 +6,11 @@
   "templater-obsidian",
   "colored-tags",
   "find-unlinked-files",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-tidy-footnotes",
+  "obsidian-auto-link-title",
+  "heading-linker",
+  "frontmatter-modified-date",
+  "highlightr-plugin",
+  "harper"
 ]

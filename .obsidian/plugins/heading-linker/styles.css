@@ -1,0 +1,582 @@
+/* Heading Linker 1.5.0 — assembled from the shared styles and src/styles.css by "npm run build". Do not edit directly. */
+
+/* Styles every linker plugin uses. The token below stands for the plugin class prefix;
+   build.mjs substitutes it when it assembles styles.css. See CONTRIBUTING.md. */
+
+/* The second column of a suggestion row — the note in one pair, the path in the other. */
+body.heading-hide-suggestion-path .heading-path,
+body.heading-hide-suggestion-path .heading-suggestion-note {
+  display: none;
+}
+
+.heading-preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-ui-small);
+}
+
+.heading-preview-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.heading-folder-row .setting-item-name {
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-smaller);
+  overflow-wrap: anywhere;
+}
+
+.heading-folder-add {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0 18px 1.5em;
+}
+
+.heading-folder-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.heading-folder-addbtn {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.heading-folder-addbtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Editable rows: the entry itself is the input, so a typo is corrected where it is read. */
+.heading-list-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 4px 0 4px 1.5em;
+  padding-left: 0.75em;
+  border-left: 2px solid var(--background-modifier-border);
+}
+
+.heading-list-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-smaller);
+}
+
+.heading-list-del {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.heading-list-del svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Ten rows, then it scrolls: a long list must not push the rest of the tab out of reach. */
+.heading-list-scroll {
+  max-height: 21em;
+  overflow-y: auto;
+}
+
+/* Priority order among the installed linker plugins. Our own row is the movable one, so
+   it is the one that reads as active; the others are context. */
+.heading-precedence-list {
+  margin: 0 0 18px 1.5em;
+}
+
+.heading-precedence-list .setting-item {
+  border-top: none;
+  /* Padding matches the folder-list rows, so this nested list lines up with the other one in the same pane: text off the left edge, arrows level with the remove buttons. */ padding: 4px 6px 4px 0.75em;
+}
+
+.heading-precedence-list .setting-item-name {
+  color: var(--text-muted);
+}
+
+.heading-precedence-self .setting-item-name {
+  color: var(--text-normal);
+  font-weight: var(--font-semibold);
+}
+
+/* Styles both prose linkers use. The plugin class prefix is substituted by build.mjs. */
+
+/* Colours are declared, not merely read with a fallback. Style Settings shows a colour row's
+   live computed value when the row carries no default, and an undeclared variable reads as
+   empty and renders a blank swatch. Its own rule is `body.css-settings-manager`, so a colour
+   chosen there still outranks this. See CONTRIBUTING.md. */
+body {
+  --heading-link-color: var(--link-color);
+  --heading-link-color-hover: var(--link-color-hover);
+  --heading-link-background: rgba(0, 0, 0, 0);
+  --heading-link-background-hover: var(--heading-link-background);
+  --heading-ambiguous-color: var(--heading-link-color);
+}
+
+/* What a highlight looks like in each state is decided in --pl-* below, where no theme
+   competes, and one rule spends them. That rule sits exactly where the plugin's has always
+   sat: a theme that paints its own links still wins, as it did before any of this was
+   configurable. See CONTRIBUTING.md. */
+.heading-link,
+.cm-heading-link {
+  --pl-ink: var(--heading-link-color);
+  --pl-bg: var(--heading-link-background);
+  --pl-width: var(--heading-underline-width, 1px);
+  --pl-style: var(--heading-underline-style, dotted);
+}
+
+.heading-ambiguous,
+.cm-heading-ambiguous {
+  --pl-ink: var(--heading-ambiguous-color);
+  --pl-width: var(--heading-ambiguous-underline-width, 3px);
+  --pl-style: var(--heading-ambiguous-underline-style, double);
+}
+
+.heading-link:hover,
+.cm-heading-link:hover {
+  --pl-ink: var(--heading-link-color-hover);
+  --pl-bg: var(--heading-link-background-hover);
+  --pl-style: var(--heading-underline-style-hover, solid);
+}
+
+/* The tint marks a collision at rest and hover answers with the ordinary hover colour, but the
+   double underline stays either way — it is what says the word is ambiguous. */
+.heading-ambiguous:hover,
+.cm-heading-ambiguous:hover {
+  --pl-width: var(--heading-ambiguous-underline-width, 3px);
+  --pl-style: var(--heading-ambiguous-underline-style, double);
+}
+
+/* currentColor, not `inherit`: a CSS-wide keyword in a custom property makes the property
+   inherit rather than storing the word, and the highlight would keep its colour. */
+body.heading-quiet .heading-link:not(:hover),
+body.heading-quiet .cm-heading-link:not(:hover) {
+  --pl-ink: currentColor;
+  --pl-bg: transparent;
+  --pl-style: none;
+}
+
+/* The one rule that meets the theme's own. Every default here resolves to what the property
+   would have been with no rule at all — a transparent background, no radius, no offset,
+   inherited weight — so an untouched vault renders exactly as it did before.
+   The hover selectors carry no declarations of their own; they are listed so each state keeps
+   the specificity its own rule used to have, which is what decides a tie with the theme. */
+.heading-link,
+.cm-heading-link,
+.heading-link:hover,
+.cm-heading-link:hover {
+  color: var(--pl-ink);
+  background-color: var(--pl-bg);
+  border-radius: var(--heading-link-radius, 0px);
+  border-bottom: var(--pl-width) var(--pl-style) var(--pl-ink);
+  /* Vertical padding on an inline box does not grow the line, so this offsets the border
+     without reflowing the paragraph. Horizontal padding would, so there is none. */
+  padding-bottom: var(--heading-underline-offset, 0px);
+  font-weight: var(--heading-link-weight, inherit);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.heading-link-italic .heading-link,
+body.heading-link-italic .cm-heading-link {
+  font-style: italic;
+}
+
+/* Reading view builds the match as a real <a>, and a theme underlines links — which lands a
+   second line under our own. Only that is answered here, at a specificity a theme's
+   `.markdown-rendered a` rule can't outrank; the colour is left to whoever the reader's theme
+   says wins, exactly as before. */
+a.heading-link,
+a.heading-link:hover,
+a.heading-link.internal-link,
+a.heading-link.internal-link:hover {
+  text-decoration: none;
+}
+
+/* `none` rather than an empty string: with no symbol chosen there is no pseudo-element at all.
+   The symbol is not part of the word, so it carries none of the word's underline — and it
+   survives quiet mode, which is the one thing quiet mode must not hide. */
+.heading-ambiguous::before,
+.cm-heading-ambiguous::before,
+body.heading-mark-after .heading-ambiguous::after,
+body.heading-mark-after .cm-heading-ambiguous::after {
+  content: var(--heading-ambiguous-symbol, none);
+  border-bottom: none;
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+body.heading-mark-after .heading-ambiguous::before,
+body.heading-mark-after .cm-heading-ambiguous::before {
+  content: none;
+}
+
+/* Autocomplete suggestion rows */
+.heading-suggestion {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.heading-suggestion-note {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  margin-left: auto;
+}
+
+/* Per-word collision resolver in the "turn into links" preview */
+.heading-term-select {
+  max-width: 16em;
+}
+
+.heading-ambiguous-row td {
+  vertical-align: middle;
+}
+
+.heading-resolve-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 4px 0 12px;
+  padding: 8px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+}
+
+.heading-resolve-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heading-resolve-word {
+  font-weight: var(--font-semibold);
+  min-width: 8em;
+}
+
+/* Choose-a-term (collision resolution) dialog */
+.heading-choose-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+/* A button, so it arrives with Obsidian's own layout: inline-flex puts the caption beside the
+   title, nowrap keeps a long title from breaking, and the fixed control height clips whatever
+   wraps anyway. A row here is a block of text, not a control. */
+.heading-choose-item {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.heading-preview-table td,
+.heading-preview-table th {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.heading-preview-file {
+  font-weight: var(--font-semibold);
+  margin: 10px 0 4px;
+}
+
+.heading-preview-empty {
+  color: var(--text-muted);
+  padding: 12px 0;
+}
+
+.heading-section-desc {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  margin: 4px 0 14px;
+}
+
+/* Language rows share the folder-row indent below, so both nested lists in the
+   pane line up. */
+.heading-lang-row.setting-item {
+  border-top: none;
+  margin-left: 1.5em;
+  padding: 6px 6px 6px 0.75em;
+  border-left: 2px solid var(--background-modifier-border);
+}
+
+.heading-lang-error {
+  color: var(--text-error);
+}
+
+/* Scoped to our own rows: `.setting-item.mod-warning` on its own would restyle the warning
+   rows in every other plugin's settings too. */
+.heading-lang-row.mod-warning .extra-setting-button {
+  color: var(--text-error);
+  opacity: 1;
+}
+
+/* Folder-set editor. Each chosen path is a compact indented row (matching the
+   language-row treatment so the pane reads as one list style); a full-width input
+   with autocomplete and an add button sits below the list. */
+.heading-folder-rows:not(:empty) {
+  margin: 6px 0;
+}
+
+.heading-folder-row.setting-item {
+  border-top: none;
+  padding: 4px 6px 4px 0.75em;
+  margin-left: 1.5em;
+  border-left: 2px solid var(--background-modifier-border);
+}
+
+/* The list of what a word could mean, shown on hover over an ambiguous span. Hovering a
+   row opens Obsidian own page preview for that one target, so this stays a plain list. */
+.heading-choices {
+  position: fixed;
+  z-index: var(--layer-popover);
+  max-width: var(--heading-choices-width, 320px);
+  padding: 6px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  background: var(--background-primary);
+  box-shadow: var(--shadow-s);
+}
+
+.heading-choices.heading-hidden {
+  display: none;
+}
+
+.heading-choices-title {
+  padding: 2px 8px 6px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.heading-choices-item {
+  padding: 4px 8px;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.heading-choices-item:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* Second line of a candidate row: what tells this meaning from the one under it — the kind,
+   and the note it lives in. Muted and small so the meanings still scan as a list. */
+.heading-choices-item-note,
+.heading-choose-item-note {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+/* @settings
+
+name: Heading Linker
+id: heading-linker
+settings:
+  -
+    id: heading-links
+    title: Links
+    type: heading
+    level: 1
+  -
+    id: heading-link-color
+    title: Highlight colour
+    description: Follows the theme's link colour until you pick one.
+    type: variable-color
+    format: hex
+    opacity: false
+  -
+    id: heading-link-color-hover
+    title: Highlight colour on hover
+    description: Follows the theme's hover colour until you pick one.
+    type: variable-color
+    format: hex
+    opacity: false
+  -
+    id: heading-underline-style
+    title: Underline style
+    type: variable-select
+    default: dotted
+    options:
+      - dotted
+      - solid
+      - dashed
+      - double
+      - none
+  -
+    id: heading-underline-style-hover
+    title: Underline style on hover
+    type: variable-select
+    default: solid
+    options:
+      - solid
+      - dotted
+      - dashed
+      - double
+      - none
+  -
+    id: heading-underline-width
+    title: Underline thickness
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 4
+    step: 1
+    format: px
+  -
+    id: heading-underline-offset
+    title: Underline offset
+    description: How far the underline sits below the text. Large values can reach the line under it.
+    type: variable-number-slider
+    default: 0
+    min: 0
+    max: 4
+    step: 1
+    format: px
+  -
+    id: heading-link-background
+    title: Highlight background
+    description: Fill behind a highlighted word, like a marker pen. Transparent until you pick one; pair it with underline style "none" for the marker look.
+    type: variable-color
+    format: hex
+    opacity: true
+  -
+    id: heading-link-background-hover
+    title: Highlight background on hover
+    description: Follows the resting background until you pick one.
+    type: variable-color
+    format: hex
+    opacity: true
+  -
+    id: heading-link-radius
+    title: Background corner radius
+    type: variable-number-slider
+    default: 0
+    min: 0
+    max: 6
+    step: 1
+    format: px
+  -
+    id: heading-link-weight
+    title: Font weight
+    type: variable-select
+    default: inherit
+    options:
+      - inherit
+      - '500'
+      - '600'
+      - '700'
+  -
+    id: heading-link-italic
+    title: Italic
+    type: class-toggle
+    default: false
+  -
+    id: heading-quiet
+    title: Show highlight only on hover
+    description: A highlighted word reads as plain text until the pointer is on it. The ambiguity symbol below stays visible, so collisions can still be spotted.
+    type: class-toggle
+    default: false
+  -
+    id: heading-ambiguity
+    title: Ambiguous terms
+    type: heading
+    level: 1
+  -
+    id: heading-ambiguous-underline-style
+    title: Ambiguous-term underline style
+    description: Underline for words with more than one possible target.
+    type: variable-select
+    default: double
+    options:
+      - double
+      - dotted
+      - dashed
+      - solid
+  -
+    id: heading-ambiguous-underline-width
+    title: Ambiguous-term underline thickness
+    type: variable-number-slider
+    default: 3
+    min: 1
+    max: 5
+    step: 1
+    format: px
+  -
+    id: heading-ambiguous-color
+    title: Ambiguous-term colour
+    description: Follows the highlight colour until you pick one. A different colour is the clearest way to spot a collision in a theme where the underline barely shows.
+    type: variable-color
+    format: hex
+    opacity: false
+  -
+    id: heading-ambiguous-symbol
+    title: Ambiguous-term symbol
+    description: Any character or emoji, shown beside a word with more than one possible target. Leave empty for none.
+    type: variable-text
+    quotes: true
+    default: ''
+  -
+    id: heading-mark-after
+    title: Put the symbol after the word
+    description: Off shows it before the word.
+    type: class-toggle
+    default: false
+  -
+    id: heading-choices-width
+    title: Ambiguity list width
+    description: How wide the list of a word's possible meanings grows on hover.
+    type: variable-number-slider
+    default: 320
+    min: 200
+    max: 640
+    step: 20
+    format: px
+  -
+    id: heading-autocomplete
+    title: Autocomplete
+    type: heading
+    level: 1
+  -
+    id: heading-hide-suggestion-path
+    title: Hide the second column
+    description: Drop the note or path shown beside a suggestion, leaving the name alone.
+    type: class-toggle
+    default: false
+
+*/
+
+/* Heading-level (H1..H6) checkbox row in settings */
+.heading-level-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* The action offered inside the "heading renamed" notice. */
+.heading-notice-action {
+  display: inline-block;
+  margin-top: 6px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Heading Linker 1.5.0 */

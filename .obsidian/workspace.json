@@ -8,17 +8,51 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8233697d6dbb32c9",
+            "id": "56015f0c5f2d33d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pharma/Untitled.md",
+                "file": "Notes/Generative AI.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Generative AI"
+            }
+          },
+          {
+            "id": "ca34f084af2c65a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "README"
+            }
+          }
+        ]
+      },
+      {
+        "id": "20363c4d8595c86e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5ee759f24a8f7f57",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Generative AI.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Generative AI"
             }
           }
         ]
@@ -83,7 +117,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "2da8d583de3a0a90",
@@ -161,7 +195,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pharma/Untitled.md",
+                "file": "Notes/Generative AI.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -176,7 +210,7 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "Pharma/Untitled.md"
+                "file": "Notes/Generative AI.md"
               },
               "icon": "lucide-file-signature",
               "title": "Footnotes"
@@ -191,13 +225,23 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "050cfa77e2f04177",
+            "type": "leaf",
+            "state": {
+              "type": "glossary-overview",
+              "state": {},
+              "icon": "book-a",
+              "title": "Glossary"
+            }
           }
         ],
         "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 297.8125
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -213,10 +257,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8233697d6dbb32c9",
+  "active": "f529d514c7ffc0f0",
   "lastOpenFiles": [
+    "README.md",
+    "Notes/Generative AI.md",
+    "Notes/AI Agent.md",
+    "Notes/Context Engineering.md",
+    "Glossary",
+    "Notes/Prompt Engineering.md",
+    "Assets/Prompt Engineering-1789135469921.webp",
     "templates/Basic Properties.md",
+    "Notes",
+    "Pharma/GxP.md",
     "Pharma/Untitled.md",
+    "Pharma/Non-clinical Research.md",
+    "Pharma/Clinical research.md",
+    "().md",
+    "Pharma/glossary",
     "templates/Basic Note Properties.md",
     "Assets",
     "templates",

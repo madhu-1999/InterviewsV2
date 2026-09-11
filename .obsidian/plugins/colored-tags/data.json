@@ -9,7 +9,12 @@
   "accessibility": {
     "highTextContrast": false
   },
-  "knownTags": {},
+  "knownTags": {
+    "ai": 1,
+    "ai/agenticai": 3,
+    "ai/contextengineering": 2,
+    "ai/genai": 1
+  },
   "tagColors": {},
   "_version": 4
 }

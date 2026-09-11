@@ -1,0 +1,43 @@
+{
+  "glossaryMode": "vault",
+  "glossarySources": "",
+  "excludeSources": "",
+  "headingAliases": true,
+  "followHeadingRenames": "ask",
+  "scopeMode": "vault",
+  "scopeFolders": "",
+  "excludeFolders": "",
+  "matchMode": "stemmer",
+  "smartCase": true,
+  "minTermLength": 2,
+  "headingLevels": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "enabledLanguages": [
+    "en"
+  ],
+  "languageOrder": [],
+  "excludeTerms": "References",
+  "excludeWords": "",
+  "linkFirstOnly": false,
+  "linkPrecedence": 20,
+  "linkSuggest": false,
+  "suggestMinChars": 3,
+  "suggestSkipAfter": "@#$^",
+  "suggestPlainText": false,
+  "highlightInReading": true,
+  "editingHighlight": "live",
+  "skipHeadings": true,
+  "statusBar": true,
+  "statusBarIncludeLinks": true,
+  "menuTurnInto": true,
+  "menuOpen": true,
+  "menuExclude": true,
+  "menuCollect": true,
+  "menuUnlink": true
+}
