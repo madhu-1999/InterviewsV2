@@ -1,6 +1,6 @@
 ---
 created: 2026-09-11 09:23
-modified: 2026-11-09 03:48
+modified: 2026-11-09 04:15
 tags:
   - AI/GenAI
 prerequisite:
@@ -41,6 +41,8 @@ G ==3==> I@{ shape: text, label: "The price is $1200 economy and $3400 business 
 	+ [!] Memory lasts for the active session only!
 2. **Long term memory**: User preferences or history is stored externally as embeddings or structured records and <mark style="background: #FFB8EBA6;">reused across multiple chat sessions.</mark>
 
+>[!Example]
+>
 # References
 
 [^1]: [Generative AI vs AI agents vs Agentic AI - YouTube](https://www.youtube.com/watch?v=O2gerCxEXvc)
