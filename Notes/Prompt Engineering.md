@@ -1,6 +1,6 @@
 ---
 created: 2026-09-10 17:47
-modified: 2026-11-09 04:39
+modified: 2026-11-09 04:42
 tags:
   - AI/GenAI
 prerequisite:
@@ -66,17 +66,17 @@ Applies a penalty on repeated tokens irrespective of frequency i.e. same penalty
 >[!quote]
 >A prompt contains any of the following elements:
 >
->**Instruction** - a specific task or instruction you want the model to perform
->**Context** - external information or additional context that can steer the model to better responses
->**Input Data** - the input or question that we are interested to find a response for
+>**Instruction** - a specific task or instruction you want the model to perform.
+>**Context** - external information or additional context that can steer the model to better responses.
+>**Input Data** - the input or question that we are interested to find a response for.
 >**Output Indicator** - the type or format of the output.
 # Types of Prompts
 [^1]
-## System prompts
+## System Prompts
 It defines the ‘big picture’ of what the model should be doing, like translating a language, classifying a review etc.
-## Contextual prompts
+## Contextual Prompts
 Provides immediate, task-specific information to guide the response.
-## Role prompts
+## Role Prompts
 Frames the model’s output style and voice.
 
 >[!example]
@@ -208,8 +208,7 @@ It **cycles** through the following steps:
 >Action: Search
 >Action Input: How many kids does Kirk Hammett have?
 >Observation: Hammett has been married to his second wife Lani since 1998.
->They have two sons, Angel (b. September 29, 2006) and Vincenzo (b. June
-28, 2008).
+>They have two sons, Angel (b. September 29, 2006) and Vincenzo (b. June 28, 2008).
 >Thought: 3/4 Metallica band members have 8 children
 >Action: Search
 >Action Input: How many kids does Robert Trujillo have?
