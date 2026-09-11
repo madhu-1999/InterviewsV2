@@ -226,7 +226,9 @@ It **cycles** through the following steps:
 >[!example]
 >```
 >❌ Generate a blog post about video game consoles.
->✅ Generate a 3 paragraph blog post about the top 5 video game consoles.The blog post should be informative and engaging, and it should be written in a conversational style.
+>✅ Generate a 3 paragraph blog post about the top 5 video game consoles.
+>The blog post should be informative and engaging, and 
+>it should be written in a conversational style.
 >```
 
 4. **Specify constraints using do's**: Instead of specifying what not to do, specify what it can do, to improve accuracy of responses.
