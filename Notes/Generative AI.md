@@ -1,6 +1,6 @@
 ---
 created: 2026-09-11 09:23
-modified: 2026-11-09 04:15
+modified: 2026-11-09 06:34
 tags:
   - AI/GenAI
 prerequisite:
@@ -42,7 +42,23 @@ G ==3==> I@{ shape: text, label: "The price is $1200 economy and $3400 business 
 2. **Long term memory**: User preferences or history is stored externally as embeddings or structured records and <mark style="background: #FFB8EBA6;">reused across multiple chat sessions.</mark>
 
 >[!Example]
->
+>**User query**:
+>```
+>Can you check if my upcoming flight to London fits our company travel budget rules?
+>```
+>**LLM + Tool + Memory search process**:
+>1. It first **checks memory** to recall user specific context. 
+> *<mark style="background: #BBFABBA6;"> User role: VP of Engineering 
+Home airport: SFO. 
+Booking preference: Delta or British Airways.
+Upcoming itinerary draft: SFO to LHR on Oct 12, business class fare quoted at $4,800</mark>*
+>2. Next, it checks its knowledge base.
+>*Here, it uses a tool to query the company's internal knowledge/database to get the result:<mark style="background: #BBFABBA6;"> Executive tier (VP and above) allows Business Class on international flights over 6 hours, capped at $5,000 per long-haul segment.</mark>*
+>3. Lastly, it combines the memory and the knowledge output to generate the final response.
+><mark style="background: #BBFABBA6;">*Your flight from SFO to LHR ($4,800 in Business Class) is **within company policy**.
+Under our executive travel guidelines, VPs are approved for business class on international routes over 6 hours up to a $5,000 limit.
+Would you like me to go ahead and save this quote to your expense draft?*</mark>
+
 # References
 
 [^1]: [Generative AI vs AI agents vs Agentic AI - YouTube](https://www.youtube.com/watch?v=O2gerCxEXvc)

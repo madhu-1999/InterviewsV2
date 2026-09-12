@@ -1,6 +1,6 @@
 ---
 created: 2026-09-10 17:47
-modified: 2026-11-09 04:42
+modified: 2026-11-09 04:44
 tags:
   - AI/GenAI
 prerequisite:
@@ -149,9 +149,8 @@ Improves reasoning ability of LLMs by generating intermediate reasoning steps.
 + [p] Low-effort, highly effective across different LLMs.
 
 >[!example]
->Q: When my brother was 2 years old, I was double his age. Now
->I am 40 years old. How old is my brother? Let's think step
->by step.
+>Q: When my brother was 2 years old, I was double his age. 
+>Now I am 40 years old. How old is my brother? Let's think step by step.
 >A: When my brother was 2 years, I was 2 * 2 = 4 years old.
 >That's an age difference of 2 years and I am older. Now I am 40
 >years old, so my brother is 40 - 2 = 38 years old. The answer
